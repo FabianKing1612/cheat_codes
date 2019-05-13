@@ -15,7 +15,7 @@ Allgemeine: - font-size -> Schriftgröße (1.5em = 1.5 mal gräßer als normal)
             - text-align -> Textausrichtung
             - width -> Breite in Prozent%
             - height -> Höhe in px
-            - float -> für mehrspaltige layouts; ein Element wird an die
+            - float -> für mehrspaltige Layouts; ein Element wird an die
               linke oder rechte Seite des Elternelements verschoben
             - clear -> damit wird festgelegt ob nachfolgende Elemente
                        um das Element herumfließen oder einen eigenständigen Abschnitt erhalten

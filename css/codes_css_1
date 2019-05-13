@@ -1,13 +1,13 @@
 /*CSS cheat-sheet*/
 
 Allg.:
-Selektor { Eigentschaft: Wert; } -> AltGr + 7/9 + Semicolon
+Selektor { Eigenschaft: Wert; } -> AltGr + 7/9 + Semicolon
 <link rel="stylesheet" href="formate.css"> = Im HTML-Dokument CSS einbinden
-margin/padding: Anordung -> Oben, Rechts, Unten, Links (Uhrezeigersinn)
+margin/padding: Anordnung -> Oben, Rechts, Unten, Links (Uhrzeigersinn)
 px -> pixel (Monitor)
 
 Codes:
-Allgemeine: - font-size -> Schriftgröße (1.5em = 1.5 mal gräßer als normal)
+Allgemeine: - font-size -> Schriftgröße (1.5em = 1.5 mal größer als Basis vom Body)
             - font-family -> Schriftart
             - font-style -> Schrift-Stil (kursiv usw.)
             - background-color -> Hintergrundfarbe

@@ -5,7 +5,6 @@ Allg.:
 <meta charset="utf-8"> - Zeichencodierung (welche Tastatur wird benutzt)
 <title> - wird im Tab angezeigt/lesezeichen/Suchprogramm(Google)
 <body> - sichtbarer Inhalt der Seite
-<footer> - Ende der Seite
 <html> -> öffnendes Tag
 </html> -> schließendes Tag
 html/head/body/div usw. -> Elemente

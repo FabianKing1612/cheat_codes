@@ -6,21 +6,24 @@ sofern : -> q drücken zum Verlassen
 Codes:
 cd c:/users/praktikant/... - direction wählen
 git init - neue git-repository erstellen (lokal)
-git add - fügt ein file zu der "Staging-Area" hinzu
+git add <file> - fügt ein file zu der "Staging-Area" hinzu
 git add . - fügt alle files zur "Staging-Area" hinzu
-git commit -m "..."- speichert es Lokal mit Beschreibung der Änderung
+git commit -m "<message>"- speichert es Lokal mit Beschreibung der Änderung
 git status - zeigt den Status von lokalen Dateien (modified?)
 git log - zeigt den Verlauf von commits
-git merge <branch> - zwei Branches zusammenführern (beide auf den selben Stand bringen)
+git merge <branch> - zwei Branches zusammenführern (Änderungen von A in B übernehmen)
 gitk - konsole öffnen (commit-history)
 git checkout -b <test> - erstellt einen neuen Branch (test) und wechselt dorthin
-git checkout - wechselt Branch
+git checkout <branch> - wechselt Branch
+git checkout <file> - setzt Änderungen (modified) in <file> zurück
+git checkout . - setzt alle Änderungen (modified) zurück
 git branch -d <test> - löscht Branch (test)
 git branch -a - zeigt alle Branches
 git diff - zeigt die Veränderungen in den files an
-
-git push -u origin master - nur beim ersten mal/beim verbinden mit dem GitHub nötig
-git push origin master - lädt die im Lokal geaddeten (add/commit -m) files in die cloud (remote) hoch -> GitHub
+git reset HEAD <file> - geaddete files von der "Staging-Area" zurück in modified
+git push -u origin <branch> - nur beim ersten mal/beim verbinden mit dem GitHub nötig
+git push origin <branch> - lädt die im Lokal geaddeten (add/commit -m) files in die cloud (remote) hoch -> GitHub
+git pull origin <branch> - lädt aktuellen Stand des origin/<branch> auf lokal
 git pull - Änderungen im remote Repository auf lokalen holen
 git remote add origin master https://github.com/... - verbindet Lokal mit GitHub-Repository
 git clone /pfad/zum/repository - Kopie erstellen

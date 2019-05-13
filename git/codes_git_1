@@ -23,6 +23,16 @@ git remote add origin master https://github.com/... - verbindet Lokal mit GitHub
 git clone /pfad/zum/repository - kopie erstellen
 
 
-Logik:
-1. Repository wählen (git bash)
-2.
+/*Logik*/
+#Repository erstellen
+1. Explorer: Neuen Ordner anlegen
+2. In PHPStorm öffnen
+3. File hinzufügen
+4. Repository wählen (git bash)
+5. Repository initialisieren
+6.
+7.
+8.
+9.
+
+#Beispiel

@@ -1,1 +1,7 @@
 /*instructions*/
+
+In this cheat_code repository I will always keep all my learned
+cheat_codes for HTML, CSS and Git.
+
+Otherwise for little hints in logical operations and all that stuff
+I will need during my apprenticeship!

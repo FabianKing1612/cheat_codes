@@ -1,0 +1,28 @@
+/*Git cheat-sheet*/
+
+Codes:
+cd c:/users/praktikant/... - direction wählen
+git init - neue git-repository erstellen (lokal)
+git add - fügt ein file zu der Staging-Area hinzu
+git add . - fügt alle files zur Staging-Area hinzu
+git commit -m "..."- speichert es lokal mit Beschreibung der Änderung
+git status - zeigt den status von lokalen dateien (modified?)
+git log - zeigt den verlauf von commits
+git merge <branch> - zwei branches zusammenführern (beide auf den selben stand bringen)
+gitk - konsole öffnen (commit-history)
+git checkout -b <test> - erstellt einen neuen Branch (test) und wechselt dorthin
+git checkout - wechselt branch
+git branch -d <test> - löscht branch (test)
+git branch -a - zeigt alle branches
+git diff - zeigt die Veränderungen in den files an
+
+git push -u origin master - nur beim ersten mal/beim verbinden mit dem GitHub nötig
+git push origin master - lädt die im Lokal geaddeten (add/commit -m) files in die cloud (remote) hoch -> GitHub
+git pull - Änderungen im remote Repository auf lokales holen
+git remote add origin master https://github.com/... - verbindet Lokal mit GitHub-Repository
+git clone /pfad/zum/repository - kopie erstellen
+
+
+Logik:
+1. Repository wählen (git bash)
+2.

@@ -1,1 +1,23 @@
 /*CSS cheat-sheet*/
+
+Allg.:
+Selektor { Eigentschaft: Wert; } -> AltGr + 7/9 + Semicolon
+<link rel="stylesheet" href="formate.css"> = Im HTML-Dokument CSS einbinden
+margin/padding: Anordung -> Oben, Rechts, Unten, Links (Uhrezeigersinn)
+px -> pixel (Monitor)
+
+Codes:
+Allgemeine: - font-size -> Schriftgröße (1.5em = 1.5 mal gräßer als normal)
+            - font-family -> Schriftart
+            - font-style -> Schrift-Stil (kursiv usw.)
+            - background-color -> Hintergrundfarbe
+            - color -> Textfarbe
+            - text-align -> Textausrichtung
+            - width -> Breite in Prozent%
+            - height -> Höhe in px
+            - float -> für mehrspaltige layouts; ein Element wird an die
+              linke oder rechte Seite des Elternelements verschoben
+            - clear -> damit wird festgelegt ob nachfolgende Elemente
+                       um das Element herumfließen oder einen eigenständigen Abschnitt erhalten
+
+inherit - Wert der Float-Eigentschaft des Elternelementes wird geerbt

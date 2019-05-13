@@ -1,5 +1,8 @@
 /*Git cheat-sheet*/
 
+Allg.:
+sofern : -> q drücken zum Verlassen
+
 Codes:
 cd c:/users/praktikant/... - direction wählen
 git init - neue git-repository erstellen (lokal)

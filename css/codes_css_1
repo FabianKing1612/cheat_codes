@@ -23,8 +23,25 @@ Allgemeine: - font-size -> Schriftgröße (1.5em = 1.5 mal größer als Basis vo
 inherit - Wert der Float-Eigentschaft des Elternelementes wird geerbt
 
 Besonderheiten:
-.max-width {
+1. .max-width {
     width: 1500px;  -> maximale Breite 1500 pixel
     margin: 0 auto;  -> 0 -> oben, unten null margin / auto -> rechts und links selbe Breite = zentral psoitioniert
 }
 
+2. padding -> um in Divs bezeichnete Textabschnitte mit
+              padding so anzuwenden, dass sich der Abschnitt
+              nicht verschiebt muss die CSS property box-sizing genutzt werden!
+              box-sizing -> definiert wie die Breite und Höge eines element berechnet werden soll,
+              sollen sie padding und broder beinhalten
+div{
+    box-sizing: border-box;   -> padding und border sind in der Breite(width) und Höhe(height) enthalten, ohne margin
+    -moz-box-sizing:border-box;  -> Anpassung für Mozilla Firefox
+    -webkit-box-sizing:border-box;  -> Anpassung für Safari und Chrome
+    width: 100%;
+}
+
+Andere möglichkeiten:
+div{
+    box-sizing: content-box;   -> Breite(width) und Höhe(height) berechnen sich aus
+    width: 100%;                  dem Inhalt des Elements und ohne border, padding oder margin
+}

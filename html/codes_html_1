@@ -36,3 +36,9 @@ href= "hyper reference" -> Hyperlink
 <value="Abschicken"> - vordefinierter Wert - Button zum abschicken
 <textarea cols="17" rows=10"> - mehrzeiliges Eingabefeld -> 17 Spalten $ 10 Zeilen
 <kbd> - zeichnet einen Teil des Textes als Benutzereingabe über die Tastatur aus
+
+Besonderheiten:
+1. .class wird bevorzugt benutzt (Semantik)
+-> kann unendlich oft benutzt werden!
+2. #id wird nur selten benutzt um etwas hervorzuheben und kann nur ein mal benutzt werden!
+-> Bsp.: <header id="header"</header>

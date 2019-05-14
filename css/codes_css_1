@@ -21,3 +21,10 @@ Allgemeine: - font-size -> Schriftgröße (1.5em = 1.5 mal größer als Basis vo
                        um das Element herumfließen oder einen eigenständigen Abschnitt erhalten
 
 inherit - Wert der Float-Eigentschaft des Elternelementes wird geerbt
+
+Besonderheiten:
+.max-width {
+    width: 1500px;  -> maximale Breite 1500 pixel
+    margin: 0 auto;  -> 0 -> oben, unten null margin / auto -> rechts und links selbe Breite = zentral psoitioniert
+}
+

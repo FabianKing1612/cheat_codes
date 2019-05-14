@@ -5,27 +5,29 @@ Selektor { Eigenschaft: Wert; } -> AltGr + 7/9 + Semicolon
 <link rel="stylesheet" href="formate.css"> = Im HTML-Dokument CSS einbinden
 margin/padding: Anordnung -> Oben, Rechts, Unten, Links (Uhrzeigersinn)
 px -> pixel (Monitor)
+CSS formatiert das HTML-Doc von oben nach unten -> die oberen werden von den
+                                                   unteren überschrieben, Reihendolge ist also wichtig!
 
 Codes:
-Allgemeine: - font-size -> Schriftgröße (1.5em = 1.5 mal größer als Basis vom Body)
-            - font-family -> Schriftart
-            - font-style -> Schrift-Stil (kursiv usw.)
-            - background-color -> Hintergrundfarbe
-            - color -> Textfarbe
-            - text-align -> Textausrichtung
-            - width -> Breite in Prozent%
-            - height -> Höhe in px
-            - float -> für mehrspaltige Layouts; ein Element wird an die
+Allgemeine: - font-size - Schriftgröße (1.5em = 1.5 mal größer als Basis vom Body)
+            - font-family - Schriftart
+            - font-style - Schrift-Stil (kursiv usw.)
+            - background-color - Hintergrundfarbe
+            - color - Textfarbe
+            - text-align - Textausrichtung
+            - width - Breite in Prozent%
+            - height - Höhe in px
+            - float - für mehrspaltige Layouts; ein Element wird an die
               linke oder rechte Seite des Elternelements verschoben
-            - clear -> damit wird festgelegt ob nachfolgende Elemente
+            - clear - damit wird festgelegt ob nachfolgende Elemente
                        um das Element herumfließen oder einen eigenständigen Abschnitt erhalten
 
 inherit - Wert der Float-Eigentschaft des Elternelementes wird geerbt
 
 Besonderheiten:
 1. .max-width {
-    width: 1500px;  -> maximale Breite 1500 pixel
-    margin: 0 auto;  -> 0 -> oben, unten null margin / auto -> rechts und links selbe Breite = zentral psoitioniert
+    width: 1500px;  /*-> maximale Breite 1500 pixel
+    margin: 0 auto;  /*-> 0 -> oben, unten null margin / auto -> rechts und links selbe Breite = zentral psoitioniert
 }
 
 2. padding -> um in Divs bezeichnete Textabschnitte mit
@@ -34,14 +36,34 @@ Besonderheiten:
               box-sizing -> definiert wie die Breite und Höge eines element berechnet werden soll,
               sollen sie padding und broder beinhalten
 div{
-    box-sizing: border-box;   -> padding und border sind in der Breite(width) und Höhe(height) enthalten, ohne margin
-    -moz-box-sizing:border-box;  -> Anpassung für Mozilla Firefox
-    -webkit-box-sizing:border-box;  -> Anpassung für Safari und Chrome
+    box-sizing: border-box;   /*-> padding und border sind in der Breite(width) u. Höhe(height) enthalten, ohne margin*/
+    -moz-box-sizing:border-box;  /*-> Anpassung für Mozilla Firefox*/
+    -webkit-box-sizing:border-box;  /*-> Anpassung für Safari und Chrome*/
     width: 100%;
 }
 
 Andere möglichkeiten:
 div{
-    box-sizing: content-box;   -> Breite(width) und Höhe(height) berechnen sich aus
-    width: 100%;                  dem Inhalt des Elements und ohne border, padding oder margin
+    box-sizing: content-box;   /*-> Breite(width) und Höhe(height) berechnen sich aus
+    width: 100%;                  dem Inhalt des Elements und ohne border, padding oder margin*/
 }
+
+Vererbung:
+HTML:
+<div class="padding first second">
+        <span class="first">Navi</span>
+        <span class="second2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+        labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+        Stet clita</span>
+CSS:
+.first {
+    background-color: black;
+}
+span.first {      /*-> nur die Eigentschaften von <span> wird in der <div> übernommen*/
+    color: white;
+}
+div.first {
+    color: yellow;
+}
+

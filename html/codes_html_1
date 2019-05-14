@@ -36,6 +36,8 @@ href= "hyper reference" -> Hyperlink
 <value="Abschicken"> - vordefinierter Wert - Button zum abschicken
 <textarea cols="17" rows=10"> - mehrzeiliges Eingabefeld -> 17 Spalten $ 10 Zeilen
 <kbd> - zeichnet einen Teil des Textes als Benutzereingabe über die Tastatur aus
+<span> - "inline element" - markiert einen Text ohne Absatz
+<p/h1-h6/usw. - Blockelemente - markiert Text und fügt einen Absatz hinzu
 
 Besonderheiten:
 1. .class wird bevorzugt benutzt (Semantik)

@@ -8,3 +8,103 @@ aus einer Datenbank.
 PHP Programme bzw. die PHP-Scripts ausführen kann, benötigt man
 einen Webserver.
 
+>PHP an sich ist eine typlose Programmiersprache, d.h. PHP ermittelt
+selbst welchen Typ (Text, Zahl usw.) der Wert hat und legt diesen
+entsprechend für die Variable fest. Ihr als Programmierer müsst euch
+darum nicht kümmern.
+
+>Variablen  können Werte jeder Art enthalten, beispielsweise
+einfach Zeilen oder Texte, aber auch komplexere Strukturen wie
+Beispielsweise Listen oder gar Bilder.
+
+Allgemein:
+1. (Allg,)
+<?php                     - Beginn des Php-Scripts
+echo "<b>Hello World</b>";   - gibt bestimmten Text aus ; <b>Text</b> = fettgedruckt
+?>                        - Ende des Php-Scripts
+
+2. (Kennzeichnungen)
+"Anführungsz. innerhalb" - muss mit \"Text\" gekennzeichnet werden
+\ = Backslash - einfügen mit einem zweiten \
+
+4. (Kommentare)
+//Text oder #Text - Kommentare (Inhalt einer Zeile überspringen)
+/*Text*/ - mehrspaltige Kommentare
+
+5.(Variablen)
+<?php
+$name = "Nils Reimers"; - Variable beginnt mit $ + Name + = + "Text" + ;
+?>
+Bsp.:
+<?php
+$name = "Nils Reimers";
+echo "Mein Name ist $name";
+?>
+Ausgabe: Mein Name ist Nils Reimers
+Bsp:
+<?php
+$name = "Nils ";
+$name .= "Reimers"; -> Variable anhängen
+echo $name;
+?>
+Ausgabe: Nils Reimers
+Bsp.:
+<?php
+$farbe = "rotes";
+$text = "Wir haben ein ".$farbe." Haus";
+echo $text;
+?>
+Ausgabe: Wir  haben ein rotes Haus
+
+6. (Variablentypen)
+integer: Eine Integer-Variable enthält nur Ganzzahlen, d.h. Zahlen ohne Komma
+string: Dies ist eine Variable, die einen Text/Satz/Wort enthält
+float: Eine Fließkommazahl, d.h. eine Zahl mit Komma
+double: In PHP das gleiche wie float
+bool: Dies sind die Werte true und false
+Bsp.:
+<?php
+$integer = 15; //Eine Integer Variable
+$string = "Ganz viel Text"; //Ein String
+$float = 15.5; //Eine Zahl mit einem Komma
+$bool = true;
+?>
+
+7. (Zahl-Variablen)
+Bsp.:
+<?php
+$zahl1 = 10;
+$zahl2 = 5;
+echo "Zahl1: $zahl1 <br />";
+echo "Zahl2: $zahl2";
+?>
+
+7.(Rechnen mit Variablen)
+<?php
+$zahl1 = 10;
+$zahl2 = 5;
+echo $zahl1 + $zahl2; //addieren
+echo "<br />";
+echo $zahl1 - $zahl2; //subtrahieren
+echo "<br />";
+echo $zahl1 * $zahl2; //multiplizieren
+echo "<br />";
+echo $zahl1 / $zahl2; //dividieren
+echo "<br />";
+echo pow($zahl1,$zahl2); //Zahl1 hoch Zahl2 (10^5)
+echo "<br />";
+echo sqrt(64); // Wurzel von 64
+echo "<br />";
+echo 2*$zahl1 + 5*$zahl2 - 3; //Berechnet 2*10 + 5*5 - 3
+?>
+
+
+Codes:
+<br /> - erzeugt einen break (zeilenumbruch in der HTML-Ausgabe
+\n - erzeugt einen break (zeilenumbruch in der Php-Ausgabe
+echo - dynamische(z.B. aus einer Datenbank) Textausgabe
+echo sqrt(64); - Wurzel von 64
+echo pow($zahl1,$zahl2); - Zahl1 hoch Zahl2 (10^5)
+$name = "Text"; - Text-Variable
+$zahl = 10; - Zahl-variable (keine Anführungszeichen)
+$ergebnis = $zahl1 + $zahl2; - Addition von Variablen

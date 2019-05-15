@@ -1,0 +1,10 @@
+/*php cheat-sheet*/
+
+>PHP wird genutzt, um eine Seite um dynamische Inhalte auf der
+Serverseite zu ergänzen, beispielsweise zum Laden von Benutzerdaten
+aus einer Datenbank.
+
+>PHP ist eine serverseitige Scriptsprache, das heißt, damit man
+PHP Programme bzw. die PHP-Scripts ausführen kann, benötigt man
+einen Webserver.
+

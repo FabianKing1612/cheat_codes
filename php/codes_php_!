@@ -231,6 +231,7 @@ Variable beispielsweise eine bestimmten Wert besitzt
 
 
 Codes:
+&& -
 <br /> - erzeugt einen break (zeilenumbruch in der HTML-Ausgabe
 \n - erzeugt einen break (zeilenumbruch in der Php-Ausgabe
 echo - dynamische(z.B. aus einer Datenbank) Textausgabe

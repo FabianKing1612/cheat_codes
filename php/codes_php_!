@@ -19,17 +19,17 @@ Beispielsweise Listen oder gar Bilder.
 
 Allgemein:
 1. (Allg,)
-<?php                     - Beginn des Php-Scripts
-echo "<b>Hello World</b>";   - gibt bestimmten Text aus ; <b>Text</b> = fettgedruckt
-?>                        - Ende des Php-Scripts
+<?php                      //Beginn des Php-Scripts
+echo "<b>Hello World</b>";    //gibt bestimmten Text aus ; <b>Text</b> = fettgedruckt
+?>                         //Ende des Php-Scripts
 
 2. (Kennzeichnungen)
-"Anführungsz. innerhalb" - muss mit \"Text\" gekennzeichnet werden
+"Anführungsz. innerhalb"  //muss mit \"Text\" gekennzeichnet werden
 \ = Backslash - einfügen mit einem zweiten \
 
 4. (Kommentare)
-//Text oder #Text - Kommentare (Inhalt einer Zeile überspringen)
-/*Text*/ - mehrspaltige Kommentare
+//Text oder #Text  //Kommentare (Inhalt einer Zeile überspringen)
+/*Text*/  //mehrspaltige Kommentare
 
 5.(Variablen)
 $ - Variablenbeginn
@@ -46,7 +46,7 @@ Ausgabe: Mein Name ist Nils Reimers
 Bsp:
 <?php
 $name = "Nils ";
-$name .= "Reimers"; -> Variable anhängen
+$name .= "Reimers";  //Variable anhängen
 echo $name;
 ?>
 Ausgabe: Nils Reimers
@@ -96,7 +96,7 @@ echo $zahl1 / $zahl2; //dividieren
 echo "<br />";
 echo pow($zahl1,$zahl2); //Zahl1 hoch Zahl2 (10^5)
 echo "<br />";
-echo sqrt(64); // Wurzel von 64
+echo sqrt(64); //Wurzel von 64
 echo "<br />";
 echo 2*$zahl1 + 5*$zahl2 - 3; //Berechnet 2*10 + 5*5 - 3
 ?>
@@ -115,7 +115,7 @@ $mittelname = §_GET['mittelname'];
 echo "Hallo $vorname $nachname";
 ?>
 GET-Parameter: get.php?vorname=Max&mittelname=Hans&nachname=Meier
--> & - Trennung von GET-Variablen
+ //& - Trennung von GET-Variablen
 
 8.2($_POST-Methode)
 >Variablewerte werden per Formular übertragen (HTML)
@@ -140,13 +140,13 @@ if(Bedingung)
 <?php
 $user = "Nils";
 
-if($user == "Nils")            -> Wenn $user Nils
+if($user == "Nils")             //Wenn $user Nils
    {
-   echo "Hallo Nils";          -> dann "..." ausgeben
+   echo "Hallo Nils";           //dann "..." ausgeben
    }
-else                           -> falls $User nicht Nils
+else                            //falls $User nicht Nils
    {
-   echo "Du bist nicht Nils!"; -> dann "..." ausgeben
+   echo "Du bist nicht Nils!";  //dann "..." ausgeben
    }
 ?>
 //Oder:
@@ -209,11 +209,11 @@ else
 <?php
 $user = $_POST["user"];
 
-if($user!="")   -> Wenn das feld $User nicht leer ist ("")
+if($user!="")   //Wenn das feld $User nicht leer ist ("")
    {
    echo "Herzlich Willkommen $user";   -> dann "..."
    }
-else       -> ist aber doch ohne Wert
+else       //ist aber doch ohne Wert
    {
    echo "Das Feld User wurde nicht ausgefüllt"; -> dann "..."
    }
@@ -224,39 +224,343 @@ else       -> ist aber doch ohne Wert
 zu vergleichen. So kann mit diesen Überprüft werden, ob eine
 Variable beispielsweise eine bestimmten Wert besitzt
 
+11.(Schleifen)
+Aufbau:
+<?php
+while(Bedingung) {
+   Anweisungen
+}
+?>
+Bsp.:
+<?php
+$i = 0;     //Variable definieren
+while($i < 10) {   //Überprüfen  ob der Wert der variable kleiner als 10 ist
+   echo "$i, ";    //Anweisungen der Schleife, werden so ft wiederholt, bis die Bedingung erfüllt ist
+   $i++;  //Variable $i ausgegeben und anschließend wird die Zählvariable um den Wert 1 erhöht.
+}
+?>
+Bsp2.:
+<?php
+$zaehler1 = 0;  //Variable 1
+$zaehler2 = 0;  //Variable 2
 
+$min = -20;
+$max = 30;
 
+while($zaehler1 < $max AND $zaehler2 > $min)  {
+   echo "Zaehler1: $zaehler1 ; Zaehler2: $zaehler2 <br>";
+   $zaehler1 += 2; //Verkürzte Schreibweise für $zaehler1 = $zaehler1+2; = erhöhung um 2
+   $zaehler2 -= 3; //Verkürzte Schreibweise für $zaehler2 = $zaehler2-3; = senkung um 3
+}
+?>
 
+11.1(Schleifenablauf beeinflussen)
+>break = Mittels break können wir den Schleifenablauf in der Schleife beenden.
+         Dies kann nützlich sein, falls wir beispielsweise etwas suchen.
+         Zum Beispiel suchen wir einen bestimmten Nutzer. Dann könnten wir
+         per while-Schleife alle Benutzer durchlaufen. Falls wir feststellen,
+         den gesuchten Nutzer gefunden zu haben, beenden wir mittels break den Schleifendurchlauf.
+Bsp.:
+<?php
+$max = 30;
+$zaehler = 0;
+$increment = 2;
 
+while($zaehler < $max) {
+   if($zaehler == 10) {
+      echo "Bei der Zahl 10 hören wir auf";
+      break;
+   }
+   echo "$zaehler , ";
+   $zaehler += $increment; //Erhöht den $zaehler um den Wert $increment
+}
+?>
+>continue = beendet nicht die gesamte Schleife, sondern
+            überspringt den restlichen Schleifenkörper
+Bsp.:
+<?php
+$max = 30;
+$zaehler = 0;
+$increment = 2;  //erhöht den Wert
+
+while($zaehler < $max) {
+   $zaehler += $increment; //Erhöht den $zaehler um den Wert $increment
+   if($zaehler >= 10 AND $zaehler <= 15) {
+      echo "Eine Zahl zwischen 10 und 15 <br>";
+      continue;
+   }
+
+   echo "$zaehler <br>";
+}
+?>
+>do-While-Schleife = Bei dieser wird die Bedingung der Schleife erst
+                     nach dem Schleifenkörper überprüft. Das bedeutet,
+                     dass der Schleifenkörper auf alle Fälle mindestens
+                     einmal durchläuft.
+Bspw.:
+<?php
+do {
+   Anweisungen
+} while(Bedingung);
+?>
+Bsp.:
+<?php
+do {
+   $zufall = rand(0, 30);
+} while($zufall > 10 AND $zufall < 20);
+
+echo "Unsere Zufallszahl: $zufall";
+?>
+
+11.2(for-Schleife)
+Bspw.:
+<?php
+for(Startwert; Bedingung; Schleifenschritt) {
+   Anweisungen
+}
+?>
+Bsp.:
+<?php
+$i = 0;
+for( ; ; ) { //Kein Startwert, Bedingung oder Schleifenschritt
+  if($i >= 20) { //Unterbreche den Schleifendurchlauf, falls $i >= 20
+     break;
+  }
+
+  echo "$i ,";
+  $i++;
+}
+?>
+
+11.3(Unterschied)
+>Der Unterschied zur zuvor vorgestellten while-Schleife liegt nur
+ in der Schreibweise. Mittels beiden Schleifentypen lässt sich die
+ gleiche Funktionalität implementieren. Aufgrund der einfacheren
+ Syntax wird die for-Schleife aber zumeist verwendet bei dem
+ hochzählen von Werten. Bei einer while-Schleife sind der Startwert,
+ die Bedingung und der abschließende Schleifenschritt zum Erhöhen der
+ Zählvariable auf drei Zeilen verteilt, bei einer for-Schleife finden
+ sich alle Informationen in ein und der selben Zeile.
+ Die while-Schleife wird dagegen häufiger verwendet, wenn es vorab
+ unklar ist wieviele Schleifendruchläufe benötigt werden.
+ Beispielsweise möchte man eine Textdatei durchsuchen, bis ein
+ bestimmte Wort gefunden wurde. Oder man durchläuft eine Tabelle einer
+ Datenbank und möchte alle Zeilen ausgeben.
+
+12.(Arrays)
+>Ein Array ist eine geordnete Liste. zum Beispiel eine geordnete Liste
+ von Zahlen/texten(Strings), beispielsweise Liste aller Benutzer einer Website
+>Kann mehrere und unterschiedliche Werte abspeichern
+Bspw.:
+<?php
+$wochentage = array("Sonntag","Montag","Dienstag",
+"Mittwoch","Donnerstag","Freitag","Samstag");
+echo $wochentage[1];  //[0] = Sonntag, [1]=Montag usw.
+?>
+
+12.1(Assoziative Arrays)
+>Bei großen Arrays hat man einen besseren Überblick
+ durch die Zuweisung von sogenannten Keys für einen Wert
+Bspw.:
+<?php
+$wochentage = array(
+"so" => "Sonntag",
+"mo" => "Montag",
+"di" => "Dienstag",
+"mi" => "Mittwoch",
+"do" => "Donnerstag",
+"fr" => "Freitag",
+"sa" => "Samstag");
+
+echo $wochentage["mo"];
+?>
+Bsp.:
+<?php
+$mitarbeiter = array("Bob","Peter");
+$mitarbeiter[] = "Lisa";
+$mitarbeiter[] = "Dieter";
+
+echo $mitarbeiter[2];
+?>
+>$mitarbeiter[]  //weitere Werte hinzufügen
+                   = neues Element im Arrey erstellt
+Bsp. assoziative Arreys:
+<?php
+$mitarbeiter = array(
+   "12" => "Bob Meier",   //$mitarbeiter["12"]  Ausgabe: Bob Meier
+   "Peter" => "Peter Schröder");
+$mitarbeiter["Lisa"] = "Lisa Müller";
+
+echo $mitarbeiter["Lisa"];
+?>
+
+12.2(Arrays in Strings konvertieren)
+>Mehrere Elemente eines Arreys zu einem String verbinden
+Bsp.:
+<?php
+$namen = array("Paul", "Max", "Hans");
+
+echo "Namen per Komma trennen: <br>";
+$namenStr = implode(", ", $namen);
+echo $namenStr;
+
+echo "<br><br>";
+echo "Ein Name pro Zeile: <br>";
+echo implode("<br>", $namen);
+
+Ausgabe:
+Namen per Komma trennen:
+Paul, Max, Hans
+
+Ein Name pro Zeile:
+Paul
+Max
+Hans
+
+12.3(Strings in Arrays konvertieren)
+>Gegensatz zu Implode
+
+12.4(mehrdimesnionale Arrays)
+>mehrere Arrays in einem Array speichern
+Bspw.:
+<?php
+$mitarbeiter = array(
+  array("Klaus", "Zabel"),
+  array("Arnie", "Meier"),
+  array("Willi", "Brand")
+);
+
+//Daten ausgeben
+echo "Vorname: ".$mitarbeiter[2][0];  //Ausgabe: Vorname: Willi
+echo " Nachname: ".$mitarbeiter[0][1];  //Ausgabe: Nachname: Zabel
+?>
+Bsp.:
+<?php
+$mitarbeiter = array();
+$mitarbeiter[] = array("Vorname"=>"Klaus",
+                       "Nachname"=>"Zabel");
+
+$mitarbeiter[] = array("Vorname"=>"Arnie",
+                       "Nachname"=>"Meier");
+
+$mitarbeiter[] = array("Vorname"=>"Willi",
+                       "Nachname"=>"Brand");
+
+//Daten ausgeben
+echo "Vorname: ".$mitarbeiter[0]["Vorname"];
+echo " Nachname: ".$mitarbeiter[0]["Nachname"];
+?>
+Bsp.:
+<?php
+$mitarbeiter = array();
+$mitarbeiter["Klaus"]["Vorname"] = "Klaus";
+$mitarbeiter["Klaus"]["Nachname"] = "Zabel";
+$mitarbeiter["Klaus"]["Kinder"][] = "Klaus-Junior";
+$mitarbeiter["Klaus"]["Kinder"][] = "Kind2";
+
+//Daten ausgeben
+echo "Vorname: ".$mitarbeiter["Klaus"]["Vorname"];
+echo " Nachname: ".$mitarbeiter["Klaus"]["Nachname"];
+echo "<br> Er hat ";
+echo count($mitarbeiter["Klaus"]["Kinder"])." Kinder";
+
+//Ausgabe von Kind1:
+//$mitarbeiter["Klaus"]["Kinder"][0];
+
+echo "<br> Kinder: <br>";
+foreach($mitarbeiter["Klaus"]["Kinder"] AS $name) {
+   echo $name."<br>";
+}
+?>
+Ausgabe.:
+Vorname: Klaus Nachname: Zabel
+Er hat 2 Kinder
+Kinder:
+Klaus-Junior
+Kind2
+
+12.5(Arrays durchsuchen)
+>überprüfen ob ein Wert in einem Array vorhanden ist
+<?php
+$mitarbeiter = array("Bob","Peter","Lisa");
+$name = "Bob";
+if(in_array($name,$mitarbeiter)) {
+   echo "Der Name $name ist in dem Array enthalten";
+}
+?>
+>überprüfen ob ein Schlüssel in einem assoziativen Array existiert
+Bsp.:
+<?php
+$mitarbeiter = array("Bob" => "Baumeister", "Klaus" => "Muster");
+$key = "Bob";
+
+if(array_key_exists($key, $mitarbeiter)) {
+  echo "Das Element $key hat den Wert: ".$mitarbeiter[$key];
+} else {
+  echo "Das Array hat keinen Schlüssel $key";
+}
+?>
+
+12.6(Arrays sortieren
+Bspw.:
+<?php
+$namen = array("Klaus", "Dieter", "Anna", "Melissa", "arne");
+
+sort($namen);
+echo implode(", ", $namen);
+?>
+Ausgabe:
+Anna, Dieter, Klaus, Melissa, rne
+
+12.7(anzahl der Elemente ermitteln)
+Bspw:
+<?php
+$mitarbeiter = array("Bob","Peter");
+
+echo count($mitarbeiter);
+?>
 
 
 Codes:
-&& -
-<br /> - erzeugt einen break (zeilenumbruch in der HTML-Ausgabe
-\n - erzeugt einen break (zeilenumbruch in der Php-Ausgabe
-echo - dynamische(z.B. aus einer Datenbank) Textausgabe
-echo sqrt(64); - Wurzel von 64
-echo pow($zahl1,$zahl2); - Zahl1 hoch Zahl2 (10^5)
-$name = "Text"; - Text-Variable
-$zahl = 10; - Zahl-variable (keine Anführungszeichen)
-$ergebnis = $zahl1 + $zahl2; - Addition von Variablen
-$_GET - Variablewerte werden per URL übertragen
-$_POST - Variablewerte werden per Formular übertragen
-$a == $b -> Gleich = Dieser Vergleich ist erfüllt, falls
+&&  //
+<br />  //erzeugt einen break (zeilenumbruch in der HTML-Ausgabe
+\n  //erzeugt einen break (zeilenumbruch in der Php-Ausgabe
+echo  //dynamische(z.B. aus einer Datenbank) Textausgabe
+echo sqrt(64);  //Wurzel von 64
+echo pow($zahl1,$zahl2);  //Zahl1 hoch Zahl2 (10^5)
+$name = "Text";  //Text-Variable
+$zahl = 10;  //Zahl-variable (keine Anführungszeichen)
+$ergebnis = $zahl1 + $zahl2;  //Addition von Variablen
+$_GET  //Variablewerte werden per URL übertragen
+$_POST  //Variablewerte werden per Formular übertragen
+$a == $b  //Gleich = Dieser Vergleich ist erfüllt, falls
             $a und $b den selben Wert beinhaltet.
             Sind die Typen der Variablen verschieden, so
             werden die konvertiert.
-$a === $b -> Identisch = Dieser Vergleich ist erfüllt, falls
+$a === $b  //Identisch = Dieser Vergleich ist erfüllt, falls
              $a und $b den selben Typ und den Inhalt besitzen.
              Wäre ein Wert vom Typ int und der andere from Typ
              String, so würde false zurück gegeben werden.
-$a != $b -> Ungleich = Dieser Vergleich ist erfüllt, falls $a
+$a != $b  //Ungleich = Dieser Vergleich ist erfüllt, falls $a
             und $b nicht den selben Wert beinhaltet. Sind die
             Typen der Variablen verschieden, so werden die konvertiert.
-$a !== $b -> Nicht identisch = Dieser Vergleich ist erfüllt,
+$a !== $b  //Nicht identisch = Dieser Vergleich ist erfüllt,
              falls $a und $b einen unterschiedlichen Typ haben
              oder einen unterschiedlichen Wert.
-$a < $b -> Kleiner = $a muss kleiner als $b sein.
-$a <= $b -> Kleiner Gleich = $a muss kleiner oder gleich $b sein.
-$a > $b -> Größer = $a muss größer als $b sein.
-$a >= $b -> Größer Gleich = $a muss größer oder gleich $b sein.
+$a < $b  //Kleiner = $a muss kleiner als $b sein.
+$a <= $b  //Kleiner Gleich = $a muss kleiner oder gleich $b sein.
+$a > $b  //Größer = $a muss größer als $b sein.
+$a >= $b  //Größer Gleich = $a muss größer oder gleich $b sein.
+break  //Schleifenablauf in der Schleife beenden
+continue  //beendet nicht die gesamte Schleife, überspringt den restlichen Schleifenkörper
+$zufall = rand($min, $max) //Zufallszahl generieren
+implode($trennzeichen, $array) //Elemente des Arrays mit String verbinden
+$trennzeichen  //Spezifizierung welches Verbindungselement zwischen den Elementen erscheint
+$explode($trennzeichn, $text)  //ein Text(String) in ein Array konvertieren
+in_array($suche,$array)  //überprüfen ob ein Wert in einem Array vorhanden ist
+sort()  //Array sortieren von a-z
+rsort()  //Array absteigend sortieren
+shuffle($array)  //mischt zufällig die Elemente des Arrays
+count($names_des_array) //Anzahl der Elemente ermitteln
+
+
